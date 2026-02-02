@@ -1,2 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Lenkishon Salash | Engineer • Theologian • Peacemaker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1f2933;
+            --secondary-color: #3b82f6;
+            --accent-color: #10b981;
+            --light-color: #f8fafc;
+            --text-color: #334155;
+            --text-light: #64748b;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --border-radius: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2d3748 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .tagline {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-top: 15px;
+            color: #e2e8f0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Content Sections */
+        section {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 50px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        .roles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0 30px;
+        }
+        
+        .role-tag {
+            background-color: #f1f5f9;
+            color: var(--primary-color);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .role-tag:nth-child(odd) {
+            background-color: #e0f2fe;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--secondary-color);
+            padding: 20px 25px;
+            margin: 25px 0;
+            background-color: #f8fafc;
+            font-style: italic;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        blockquote p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--primary-color);
+        }
+        
+        .quote-source {
+            margin-top: 10px;
+            text-align: right;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+        
+        /* Social Media Links */
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background-color: #f8fafc;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+            background-color: white;
+            border-color: var(--secondary-color);
+        }
+        
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .facebook .social-icon {
+            background-color: #1877f2;
+        }
+        
+        .instagram .social-icon {
+            background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+        }
+        
+        .twitter .social-icon {
+            background-color: #1da1f2;
+        }
+        
+        .youtube .social-icon {
+            background-color: #ff0000;
+        }
+        
+        .tiktok .social-icon {
+            background-color: #000000;
+        }
+        
+        .phone .social-icon {
+            background-color: var(--accent-color);
+        }
+        
+        .social-text strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .social-text span {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+        
+        .copyright {
+            margin-top: 10px;
+            color: #cbd5e1;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.7rem;
+            }
+            
+            section {
+                padding: 30px;
+            }
+            
+            .social-links {
+                grid-template-columns: 1fr;
+            }
+            
+            header {
+                padding: 60px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 20px;
+            }
+            
+            .role-tag {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Alex Lenkishon Salash</h1>
+            <p class="tagline">"A better you is a better me, and a better me is a better you."</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section id="about">
+            <h2>About</h2>
+            <div class="roles">
+                <div class="role-tag">Engineer</div>
+                <div class="role-tag">Theologian</div>
+                <div class="role-tag">Chaplain</div>
+                <div class="role-tag">Preacher</div>
+                <div class="role-tag">Counselor</div>
+                <div class="role-tag">Motivational Speaker</div>
+                <div class="role-tag">Advisor</div>
+                <div class="role-tag">Peace Intermediary</div>
+            </div>
+            <p>
+                Alex Lenkishon Salash is a Kenyan professional whose life brings together engineering discipline and Christian faith. 
+                He is passionate about building people, restoring relationships, and guiding communities toward purpose, peace, 
+                and responsible leadership.
+            </p>
+        </section>
+        
+        <section id="calling">
+            <h2>Calling and Ministry</h2>
+            <p>
+                As a theologian, chaplain, and preacher, Alex serves individuals and communities through pastoral care, biblical teaching, 
+                and spiritual guidance. His ministry focuses on love, service, accountability, and practical faith lived out daily.
+            </p>
+            <blockquote>
+                <p>"Jesus said to Simon Peter, 'Do you love Me?' … 'Feed My lambs.' … 'Tend My sheep.' … 'Feed My sheep.'"</p>
+                <div class="quote-source">— John 21:15–17</div>
+            </blockquote>
+        </section>
+        
+        <section id="peace-work">
+            <h2>Counseling, Mediation, and Peace Work</h2>
+            <p>
+                Alex works as a counselor and peace intermediary, helping individuals, families, and groups resolve conflict, heal emotional wounds, 
+                and rebuild trust. His approach is ethical, compassionate, and dialogue-centered, aiming for reconciliation and lasting peace.
+            </p>
+        </section>
+        
+        <section id="motivation">
+            <h2>Motivation and Advisory</h2>
+            <p>
+                As a motivational speaker and advisor, Alex speaks on purpose, discipline, leadership, faith, resilience, and social responsibility. 
+                His messages are grounded in real life, moral clarity, and practical wisdom.
+            </p>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact & Social Media</h2>
+            <div class="social-links">
+                <a href="tel:0715518041" class="social-link phone">
+                    <div class="social-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="social-text">
+                        <strong>Phone</strong>
+                        <span>0715 518 041</span>
+                    </div>
+                </a>
+                
+                <a href="https://facebook.com/Alex ole Salash" target="_blank" class="social-link facebook">
+                    <div class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <div class="social-text">
+                        <strong>Facebook</strong>
+                        <span>Alex ole Salash</span>
+                    </div>
+                </a>
+                
+                <a href="https://tiktok.com/@Govanaa1" target="_blank" class="social-link tiktok">
+                    <div class="social-icon">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <div class="social-text">
+                        <strong>TikTok</strong>
+                        <span>Govanaa1</span>
+                    </div>
+                </a>
+                
+                <a href="https://youtube.com/@maasaipress034" target="_blank" class="social-link youtube">
+                    <div class="social-icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <div class="social-text">
+                        <strong>YouTube</strong>
+                        <span>Maasai Press</span>
+                    </div>
+                </a>
+                
+                <a href="https://instagram.com/Alex Lenkishon" target="_blank" class="social-link instagram">
+                    <div class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="social-text">
+                        <strong>Instagram</strong>
+                        <span>Alex Lenkishon</span>
+                    </div>
+                </a>
+                
+                <a href="https://twitter.com/AlexLenkishon" target="_blank" class="social-link twitter">
+                    <div class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <div class="social-text">
+                        <strong>X (Twitter)</strong>
+                        <span>@AlexLenkishon</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Alex Lenkishon Salash. All rights reserved.</p>
+            <p class="copyright">Engineer • Theologian • Peacemaker</p>
+        </div>
+    </footer>
+</body>
+</html>
 # salash
 professional portfolio
